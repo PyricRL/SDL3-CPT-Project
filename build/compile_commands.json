@@ -1,9 +1,9 @@
 [
 {
   "directory": "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build",
-  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -I\"C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/vendored/SDL/include-revision\" -I\"C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/vendored/SDL/include\" -g -o CMakeFiles\\Data-Sorting-Speeds.dir\\src\\main.cpp.obj -c \"C:\\Users\\LJCosa\\OneDrive - Edwardsville Community Schools\\Coding\\GitHub Repos\\SDL3Cmake\\src\\main.cpp\"",
-  "file": "C:\\Users\\LJCosa\\OneDrive - Edwardsville Community Schools\\Coding\\GitHub Repos\\SDL3Cmake\\src\\main.cpp",
-  "output": "CMakeFiles\\Data-Sorting-Speeds.dir\\src\\main.cpp.obj"
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -I\"C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/vendored/SDL/include-revision\" -I\"C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/vendored/SDL/include\" -g -o CMakeFiles\\Data-Sorting-Speeds.dir\\src\\frontend\\main.cpp.obj -c \"C:\\Users\\LJCosa\\OneDrive - Edwardsville Community Schools\\Coding\\GitHub Repos\\SDL3Cmake\\src\\frontend\\main.cpp\"",
+  "file": "C:\\Users\\LJCosa\\OneDrive - Edwardsville Community Schools\\Coding\\GitHub Repos\\SDL3Cmake\\src\\frontend\\main.cpp",
+  "output": "CMakeFiles\\Data-Sorting-Speeds.dir\\src\\frontend\\main.cpp.obj"
 },
 {
   "directory": "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build",

@@ -49,13 +49,13 @@ cmake_ninja_workdir = C$:/Users/LJCosa/OneDrive$ -$ Edwardsville$ Community$ Sch
 
 build cmake_object_order_depends_target_Data-Sorting-Speeds: phony || cmake_object_order_depends_target_SDL3-shared
 
-build CMakeFiles/Data-Sorting-Speeds.dir/src/main.cpp.obj: CXX_COMPILER__Data-Sorting-Speeds_unscanned_Debug C$:/Users/LJCosa/OneDrive$ -$ Edwardsville$ Community$ Schools/Coding/GitHub$ Repos/SDL3Cmake/src/main.cpp || cmake_object_order_depends_target_Data-Sorting-Speeds
+build CMakeFiles/Data-Sorting-Speeds.dir/src/frontend/main.cpp.obj: CXX_COMPILER__Data-Sorting-Speeds_unscanned_Debug C$:/Users/LJCosa/OneDrive$ -$ Edwardsville$ Community$ Schools/Coding/GitHub$ Repos/SDL3Cmake/src/frontend/main.cpp || cmake_object_order_depends_target_Data-Sorting-Speeds
   CONFIG = Debug
-  DEP_FILE = CMakeFiles\Data-Sorting-Speeds.dir\src\main.cpp.obj.d
+  DEP_FILE = CMakeFiles\Data-Sorting-Speeds.dir\src\frontend\main.cpp.obj.d
   FLAGS = -g
   INCLUDES = -I"C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/vendored/SDL/include-revision" -I"C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/vendored/SDL/include"
   OBJECT_DIR = CMakeFiles\Data-Sorting-Speeds.dir
-  OBJECT_FILE_DIR = CMakeFiles\Data-Sorting-Speeds.dir\src
+  OBJECT_FILE_DIR = CMakeFiles\Data-Sorting-Speeds.dir\src\frontend
 
 
 # =============================================================================
@@ -65,7 +65,7 @@ build CMakeFiles/Data-Sorting-Speeds.dir/src/main.cpp.obj: CXX_COMPILER__Data-So
 #############################################
 # Link the executable Debug\Data-Sorting-Speeds.exe
 
-build Debug/Data-Sorting-Speeds.exe: CXX_EXECUTABLE_LINKER__Data-Sorting-Speeds_Debug CMakeFiles/Data-Sorting-Speeds.dir/src/main.cpp.obj | vendored/SDL/libSDL3.dll.a C$:/Users/LJCosa/OneDrive$ -$ Edwardsville$ Community$ Schools/Coding/GitHub$ Repos/SDL3Cmake/vendored/SDL/src/dynapi/SDL_dynapi.sym || Debug/SDL3.dll
+build Debug/Data-Sorting-Speeds.exe: CXX_EXECUTABLE_LINKER__Data-Sorting-Speeds_Debug CMakeFiles/Data-Sorting-Speeds.dir/src/frontend/main.cpp.obj | vendored/SDL/libSDL3.dll.a C$:/Users/LJCosa/OneDrive$ -$ Edwardsville$ Community$ Schools/Coding/GitHub$ Repos/SDL3Cmake/vendored/SDL/src/dynapi/SDL_dynapi.sym || Debug/SDL3.dll
   CONFIG = Debug
   FLAGS = -g
   LINK_FLAGS = -mwindows
