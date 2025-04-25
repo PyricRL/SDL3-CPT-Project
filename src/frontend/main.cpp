@@ -54,6 +54,12 @@ int main(int argc, char* argv[]) {
 		return 1;
 	}
 
+	if (generateData(10, "Merge"))
+	{
+		std::cout << "GenerateData failed with error" << std::endl;
+		return 1;
+	}
+
     bool running = true;
 
 	SDL_Event event;
