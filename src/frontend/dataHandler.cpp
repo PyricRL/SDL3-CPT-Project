@@ -3,6 +3,7 @@
 static std::vector<std::vector<std::string>> temp;
 
 int generateData(int length, std::string Type) {
+    std::cout << "Hi" << std::endl;
     std::vector<std::string> headerStr; // Vector of headers
     std::vector<std::string> dataStr;   // Vector of data
     std::vector<int> indices(length);   // Vector to hold indices 0 to length-1
@@ -38,7 +39,7 @@ int generateData(int length, std::string Type) {
     temp.push_back(dataStr);
 
     // open file to write to
-    std::ofstream outputFile("Data/inputData.csv");
+    std::ofstream outputFile("data/programIn.csv");
 
     if (!outputFile.is_open())
     {
@@ -73,5 +74,13 @@ int generateData(int length, std::string Type) {
     }
 
     outputFile.close();
+    std::cout << "Closed file just fine... get better" << std::endl;
+    return 0;
+}
+
+int displayDataToScreen(std::vector<int> array, int length, SDL_Renderer* renderer, SDL_Window* window) {
+    for (int i = 0; i < length - 1; i++) {
+        std::cout << array[i] << std::endl;
+    }
     return 0;
 }
