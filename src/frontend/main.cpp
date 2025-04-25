@@ -1,7 +1,6 @@
 #include "SDL3/SDL.h"
 
 #include "dataHandler.hpp"
-#include "generateDataGraph.hpp"
 
 #include <iostream>
 
@@ -57,6 +56,13 @@ int main(int argc, char* argv[]) {
 	if (generateData(10, "Merge"))
 	{
 		std::cout << "GenerateData failed with error" << std::endl;
+		return 1;
+	}
+
+	std::vector<int> array(10);
+
+	if (displayDataToScreen(array, 10, renderer, window)) {
+		std::cout << "DisplayDataToScreen failed with error" << std::endl;
 		return 1;
 	}
 

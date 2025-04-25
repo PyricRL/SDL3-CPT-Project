@@ -44,7 +44,7 @@ int generateData(int length, std::string Type) {
     if (!outputFile.is_open())
     {
         std::cerr << "Error: Could not open file for writing." << std::endl;
-        return 1; // Indicate an error
+        return 1;
     }
 
     // Check for first index of array (length)
