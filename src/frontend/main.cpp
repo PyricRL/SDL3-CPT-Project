@@ -30,6 +30,13 @@ static SDL_Renderer* renderer;
  * >CMake: Debug
  */
 
+ /**
+  * if it says that your trying to push a file:
+  * git submodule deinit -f vendored/SDL
+  * git rm -rf --cached vendored/SDL
+  * rm -rf .git/modules/vendored/SDL
+  */
+
 void update(SDL_Renderer* renderer) {
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 	SDL_RenderClear(renderer);
