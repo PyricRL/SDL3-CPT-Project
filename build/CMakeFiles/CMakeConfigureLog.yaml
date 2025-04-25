@@ -771,3 +771,427 @@ events:
         [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\msys64\\mingw64\\bin\\gcc.exe -D_GNU_SOURCE=1  CMakeFiles/cmTC_947df.dir/src.c.obj -o cmTC_947df.exe -Wl,--out-implib,libcmTC_947df.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
         
       exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/msys64/mingw64/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "C:/msys64/mingw64/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/msys64/mingw64/share/cmake/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "vendored/SDL/cmake/sdlcompilers.cmake:82 (check_c_compiler_flag)"
+      - "vendored/SDL/CMakeLists.txt:428 (SDL_AddCommonCompilerFlags)"
+    checks:
+      - "Performing Test HAVE_GCC_WDOCUMENTATION"
+    directories:
+      source: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-qn4ejv"
+      binary: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-qn4ejv"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/vendored/SDL/cmake"
+    buildResult:
+      variable: "HAVE_GCC_WDOCUMENTATION"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-qn4ejv'
+        
+        Run Build Command(s): C:/msys64/mingw64/bin/ninja.exe -v cmTC_444ce
+        [1/2] C:\\msys64\\mingw64\\bin\\gcc.exe -DHAVE_GCC_WDOCUMENTATION  -D_GNU_SOURCE=1   -Wdocumentation -o CMakeFiles/cmTC_444ce.dir/src.c.obj -c "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-qn4ejv/src.c"
+        FAILED: CMakeFiles/cmTC_444ce.dir/src.c.obj 
+        C:\\msys64\\mingw64\\bin\\gcc.exe -DHAVE_GCC_WDOCUMENTATION  -D_GNU_SOURCE=1   -Wdocumentation -o CMakeFiles/cmTC_444ce.dir/src.c.obj -c "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-qn4ejv/src.c"
+        gcc.exe: error: unrecognized command-line option '-Wdocumentation'
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/msys64/mingw64/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "C:/msys64/mingw64/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/msys64/mingw64/share/cmake/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "vendored/SDL/cmake/sdlcompilers.cmake:93 (check_c_compiler_flag)"
+      - "vendored/SDL/CMakeLists.txt:428 (SDL_AddCommonCompilerFlags)"
+    checks:
+      - "Performing Test HAVE_GCC_WDOCUMENTATION_UNKNOWN_COMMAND"
+    directories:
+      source: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-8qhczm"
+      binary: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-8qhczm"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/vendored/SDL/cmake"
+    buildResult:
+      variable: "HAVE_GCC_WDOCUMENTATION_UNKNOWN_COMMAND"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-8qhczm'
+        
+        Run Build Command(s): C:/msys64/mingw64/bin/ninja.exe -v cmTC_75a37
+        [1/2] C:\\msys64\\mingw64\\bin\\gcc.exe -DHAVE_GCC_WDOCUMENTATION_UNKNOWN_COMMAND  -D_GNU_SOURCE=1   -Wdocumentation-unknown-command -o CMakeFiles/cmTC_75a37.dir/src.c.obj -c "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-8qhczm/src.c"
+        FAILED: CMakeFiles/cmTC_75a37.dir/src.c.obj 
+        C:\\msys64\\mingw64\\bin\\gcc.exe -DHAVE_GCC_WDOCUMENTATION_UNKNOWN_COMMAND  -D_GNU_SOURCE=1   -Wdocumentation-unknown-command -o CMakeFiles/cmTC_75a37.dir/src.c.obj -c "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-8qhczm/src.c"
+        gcc.exe: error: unrecognized command-line option '-Wdocumentation-unknown-command'
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/msys64/mingw64/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "C:/msys64/mingw64/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/msys64/mingw64/share/cmake/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "vendored/SDL/cmake/sdlcompilers.cmake:104 (check_c_compiler_flag)"
+      - "vendored/SDL/CMakeLists.txt:428 (SDL_AddCommonCompilerFlags)"
+    checks:
+      - "Performing Test HAVE_GCC_COMMENT_BLOCK_COMMANDS"
+    directories:
+      source: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-6zzv7k"
+      binary: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-6zzv7k"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/vendored/SDL/cmake"
+    buildResult:
+      variable: "HAVE_GCC_COMMENT_BLOCK_COMMANDS"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-6zzv7k'
+        
+        Run Build Command(s): C:/msys64/mingw64/bin/ninja.exe -v cmTC_c2b3d
+        [1/2] C:\\msys64\\mingw64\\bin\\gcc.exe -DHAVE_GCC_COMMENT_BLOCK_COMMANDS  -D_GNU_SOURCE=1   -fcomment-block-commands=threadsafety -o CMakeFiles/cmTC_c2b3d.dir/src.c.obj -c "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-6zzv7k/src.c"
+        FAILED: CMakeFiles/cmTC_c2b3d.dir/src.c.obj 
+        C:\\msys64\\mingw64\\bin\\gcc.exe -DHAVE_GCC_COMMENT_BLOCK_COMMANDS  -D_GNU_SOURCE=1   -fcomment-block-commands=threadsafety -o CMakeFiles/cmTC_c2b3d.dir/src.c.obj -c "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-6zzv7k/src.c"
+        gcc.exe: error: unrecognized command-line option '-fcomment-block-commands=threadsafety'
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/msys64/mingw64/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "C:/msys64/mingw64/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/msys64/mingw64/share/cmake/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "vendored/SDL/cmake/sdlcompilers.cmake:108 (check_c_compiler_flag)"
+      - "vendored/SDL/CMakeLists.txt:428 (SDL_AddCommonCompilerFlags)"
+    checks:
+      - "Performing Test HAVE_CLANG_COMMENT_BLOCK_COMMANDS"
+    directories:
+      source: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-x36179"
+      binary: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-x36179"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/vendored/SDL/cmake"
+    buildResult:
+      variable: "HAVE_CLANG_COMMENT_BLOCK_COMMANDS"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-x36179'
+        
+        Run Build Command(s): C:/msys64/mingw64/bin/ninja.exe -v cmTC_e1dc2
+        [1/2] C:\\msys64\\mingw64\\bin\\gcc.exe -DHAVE_CLANG_COMMENT_BLOCK_COMMANDS  -D_GNU_SOURCE=1   /clang:-fcomment-block-commands=threadsafety -o CMakeFiles/cmTC_e1dc2.dir/src.c.obj -c "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-x36179/src.c"
+        FAILED: CMakeFiles/cmTC_e1dc2.dir/src.c.obj 
+        C:\\msys64\\mingw64\\bin\\gcc.exe -DHAVE_CLANG_COMMENT_BLOCK_COMMANDS  -D_GNU_SOURCE=1   /clang:-fcomment-block-commands=threadsafety -o CMakeFiles/cmTC_e1dc2.dir/src.c.obj -c "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-x36179/src.c"
+        gcc.exe: warning: /clang:-fcomment-block-commands=threadsafety: linker input file unused because linking not done
+        gcc.exe: error: /clang:-fcomment-block-commands=threadsafety: linker input file not found: No such file or directory
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/msys64/mingw64/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "C:/msys64/mingw64/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/msys64/mingw64/share/cmake/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "vendored/SDL/cmake/sdlcompilers.cmake:114 (check_c_compiler_flag)"
+      - "vendored/SDL/CMakeLists.txt:428 (SDL_AddCommonCompilerFlags)"
+    checks:
+      - "Performing Test HAVE_GCC_WSHADOW"
+    directories:
+      source: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-qp7p6d"
+      binary: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-qp7p6d"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/vendored/SDL/cmake"
+    buildResult:
+      variable: "HAVE_GCC_WSHADOW"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-qp7p6d'
+        
+        Run Build Command(s): C:/msys64/mingw64/bin/ninja.exe -v cmTC_dd661
+        [1/2] C:\\msys64\\mingw64\\bin\\gcc.exe -DHAVE_GCC_WSHADOW  -D_GNU_SOURCE=1   -Wshadow -o CMakeFiles/cmTC_dd661.dir/src.c.obj -c "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-qp7p6d/src.c"
+        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\msys64\\mingw64\\bin\\gcc.exe -D_GNU_SOURCE=1  CMakeFiles/cmTC_dd661.dir/src.c.obj -o cmTC_dd661.exe -Wl,--out-implib,libcmTC_dd661.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/msys64/mingw64/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "C:/msys64/mingw64/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/msys64/mingw64/share/cmake/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "vendored/SDL/cmake/sdlcompilers.cmake:119 (check_c_compiler_flag)"
+      - "vendored/SDL/CMakeLists.txt:428 (SDL_AddCommonCompilerFlags)"
+    checks:
+      - "Performing Test HAVE_GCC_WUNUSED_LOCAL_TYPEDEFS"
+    directories:
+      source: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-1ya9mo"
+      binary: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-1ya9mo"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/vendored/SDL/cmake"
+    buildResult:
+      variable: "HAVE_GCC_WUNUSED_LOCAL_TYPEDEFS"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-1ya9mo'
+        
+        Run Build Command(s): C:/msys64/mingw64/bin/ninja.exe -v cmTC_98046
+        [1/2] C:\\msys64\\mingw64\\bin\\gcc.exe -DHAVE_GCC_WUNUSED_LOCAL_TYPEDEFS  -D_GNU_SOURCE=1   -Wunused-local-typedefs -o CMakeFiles/cmTC_98046.dir/src.c.obj -c "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-1ya9mo/src.c"
+        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\msys64\\mingw64\\bin\\gcc.exe -D_GNU_SOURCE=1  CMakeFiles/cmTC_98046.dir/src.c.obj -o cmTC_98046.exe -Wl,--out-implib,libcmTC_98046.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/msys64/mingw64/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "C:/msys64/mingw64/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/msys64/mingw64/share/cmake/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "vendored/SDL/cmake/sdlcompilers.cmake:124 (check_c_compiler_flag)"
+      - "vendored/SDL/CMakeLists.txt:428 (SDL_AddCommonCompilerFlags)"
+    checks:
+      - "Performing Test HAVE_GCC_WIMPLICIT_FALLTHROUGH"
+    directories:
+      source: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-fuejnc"
+      binary: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-fuejnc"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/vendored/SDL/cmake"
+    buildResult:
+      variable: "HAVE_GCC_WIMPLICIT_FALLTHROUGH"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-fuejnc'
+        
+        Run Build Command(s): C:/msys64/mingw64/bin/ninja.exe -v cmTC_c5ec3
+        [1/2] C:\\msys64\\mingw64\\bin\\gcc.exe -DHAVE_GCC_WIMPLICIT_FALLTHROUGH  -D_GNU_SOURCE=1   -Wimplicit-fallthrough -o CMakeFiles/cmTC_c5ec3.dir/src.c.obj -c "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-fuejnc/src.c"
+        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\msys64\\mingw64\\bin\\gcc.exe -D_GNU_SOURCE=1  CMakeFiles/cmTC_c5ec3.dir/src.c.obj -o cmTC_c5ec3.exe -Wl,--out-implib,libcmTC_c5ec3.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/msys64/mingw64/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "C:/msys64/mingw64/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/msys64/mingw64/share/cmake/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "vendored/SDL/cmake/sdlcompilers.cmake:157 (check_c_compiler_flag)"
+      - "vendored/SDL/CMakeLists.txt:428 (SDL_AddCommonCompilerFlags)"
+    checks:
+      - "Performing Test COMPILER_SUPPORTS_FDIAGNOSTICS_COLOR_ALWAYS"
+    directories:
+      source: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-v4guj6"
+      binary: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-v4guj6"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/vendored/SDL/cmake"
+    buildResult:
+      variable: "COMPILER_SUPPORTS_FDIAGNOSTICS_COLOR_ALWAYS"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-v4guj6'
+        
+        Run Build Command(s): C:/msys64/mingw64/bin/ninja.exe -v cmTC_a3d8d
+        [1/2] C:\\msys64\\mingw64\\bin\\gcc.exe -DCOMPILER_SUPPORTS_FDIAGNOSTICS_COLOR_ALWAYS  -D_GNU_SOURCE=1   -fdiagnostics-color=always -o CMakeFiles/cmTC_a3d8d.dir/src.c.obj -c "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-v4guj6/src.c"
+        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\msys64\\mingw64\\bin\\gcc.exe -D_GNU_SOURCE=1  CMakeFiles/cmTC_a3d8d.dir/src.c.obj -o cmTC_a3d8d.exe -Wl,--out-implib,libcmTC_a3d8d.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/msys64/mingw64/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "C:/msys64/mingw64/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "vendored/SDL/CMakeLists.txt:464 (check_symbol_exists)"
+    checks:
+      - "Looking for __GLIBC__"
+    directories:
+      source: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-y90pmv"
+      binary: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-y90pmv"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/vendored/SDL/cmake"
+    buildResult:
+      variable: "LIBC_IS_GLIBC"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-y90pmv'
+        
+        Run Build Command(s): C:/msys64/mingw64/bin/ninja.exe -v cmTC_414ba
+        [1/2] C:\\msys64\\mingw64\\bin\\gcc.exe   -D_GNU_SOURCE=1 -o CMakeFiles/cmTC_414ba.dir/CheckSymbolExists.c.obj -c "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-y90pmv/CheckSymbolExists.c"
+        FAILED: CMakeFiles/cmTC_414ba.dir/CheckSymbolExists.c.obj 
+        C:\\msys64\\mingw64\\bin\\gcc.exe   -D_GNU_SOURCE=1 -o CMakeFiles/cmTC_414ba.dir/CheckSymbolExists.c.obj -c "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-y90pmv/CheckSymbolExists.c"
+        C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-y90pmv/CheckSymbolExists.c: In function 'main':
+        C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-y90pmv/CheckSymbolExists.c:8:19: error: '__GLIBC__' undeclared (first use in this function); did you mean '__LINE__'?
+            8 |   return ((int*)(&__GLIBC__))[argc];
+              |                   ^~~~~~~~~
+              |                   __LINE__
+        C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-y90pmv/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/msys64/mingw64/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "C:/msys64/mingw64/share/cmake/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "vendored/SDL/cmake/macros.cmake:304 (check_c_source_compiles)"
+      - "vendored/SDL/CMakeLists.txt:472 (check_linker_supports_version_file)"
+    checks:
+      - "Performing Test LINKER_SUPPORTS_VERSION_SCRIPT"
+    directories:
+      source: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-6j163z"
+      binary: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-6j163z"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/vendored/SDL/cmake"
+    buildResult:
+      variable: "LINKER_SUPPORTS_VERSION_SCRIPT"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-6j163z'
+        
+        Run Build Command(s): C:/msys64/mingw64/bin/ninja.exe -v cmTC_4b69f
+        [1/2] C:\\msys64\\mingw64\\bin\\gcc.exe -DLINKER_SUPPORTS_VERSION_SCRIPT   -o CMakeFiles/cmTC_4b69f.dir/src.c.obj -c "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-6j163z/src.c"
+        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\msys64\\mingw64\\bin\\gcc.exe  "-Wl,--version-script=C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/vendored/SDL/CMakeFiles/dummy.sym" CMakeFiles/cmTC_4b69f.dir/src.c.obj -o cmTC_4b69f.exe -Wl,--out-implib,libcmTC_4b69f.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/msys64/mingw64/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "C:/msys64/mingw64/share/cmake/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "vendored/SDL/CMakeLists.txt:570 (check_c_source_compiles)"
+    checks:
+      - "Performing Test COMPILER_SUPPORTS_GCC_ATOMICS"
+    directories:
+      source: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-w37lf7"
+      binary: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-w37lf7"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/vendored/SDL/cmake"
+    buildResult:
+      variable: "COMPILER_SUPPORTS_GCC_ATOMICS"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-w37lf7'
+        
+        Run Build Command(s): C:/msys64/mingw64/bin/ninja.exe -v cmTC_4f678
+        [1/2] C:\\msys64\\mingw64\\bin\\gcc.exe -DCOMPILER_SUPPORTS_GCC_ATOMICS  -D_GNU_SOURCE=1 -o CMakeFiles/cmTC_4f678.dir/src.c.obj -c "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-w37lf7/src.c"
+        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\msys64\\mingw64\\bin\\gcc.exe -D_GNU_SOURCE=1  CMakeFiles/cmTC_4f678.dir/src.c.obj -o cmTC_4f678.exe -Wl,--out-implib,libcmTC_4f678.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/msys64/mingw64/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "C:/msys64/mingw64/share/cmake/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "vendored/SDL/CMakeLists.txt:592 (check_c_source_compiles)"
+    checks:
+      - "Performing Test HAVE_GCC_FVISIBILITY"
+    directories:
+      source: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-za3t8y"
+      binary: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-za3t8y"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/vendored/SDL/cmake"
+    buildResult:
+      variable: "HAVE_GCC_FVISIBILITY"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-za3t8y'
+        
+        Run Build Command(s): C:/msys64/mingw64/bin/ninja.exe -v cmTC_1ac73
+        [1/2] C:\\msys64\\mingw64\\bin\\gcc.exe -DHAVE_GCC_FVISIBILITY  -D_GNU_SOURCE=1 -fvisibility=hidden -Werror -o CMakeFiles/cmTC_1ac73.dir/src.c.obj -c "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-za3t8y/src.c"
+        FAILED: CMakeFiles/cmTC_1ac73.dir/src.c.obj 
+        C:\\msys64\\mingw64\\bin\\gcc.exe -DHAVE_GCC_FVISIBILITY  -D_GNU_SOURCE=1 -fvisibility=hidden -Werror -o CMakeFiles/cmTC_1ac73.dir/src.c.obj -c "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-za3t8y/src.c"
+        C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-za3t8y/src.c: In function 'bar':
+        C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-za3t8y/src.c:8:33: error: visibility attribute not supported in this configuration; ignored [-Werror=attributes]
+            8 |       int bar(void) { return 1; }
+              |                                 ^
+        cc1.exe: all warnings being treated as errors
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/msys64/mingw64/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "C:/msys64/mingw64/share/cmake/Modules/Internal/CheckLinkerFlag.cmake:34 (cmake_check_source_compiles)"
+      - "C:/msys64/mingw64/share/cmake/Modules/CheckLinkerFlag.cmake:44 (cmake_check_linker_flag)"
+      - "vendored/SDL/CMakeLists.txt:617 (check_linker_flag)"
+    checks:
+      - "Performing Test LINKER_SUPPORTS_WL_NO_UNDEFINED"
+    directories:
+      source: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-v78v1p"
+      binary: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-v78v1p"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/vendored/SDL/cmake"
+    buildResult:
+      variable: "LINKER_SUPPORTS_WL_NO_UNDEFINED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-v78v1p'
+        
+        Run Build Command(s): C:/msys64/mingw64/bin/ninja.exe -v cmTC_13171
+        [1/2] C:\\msys64\\mingw64\\bin\\gcc.exe -DLINKER_SUPPORTS_WL_NO_UNDEFINED  -D_GNU_SOURCE=1 -o CMakeFiles/cmTC_13171.dir/src.c.obj -c "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-v78v1p/src.c"
+        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\msys64\\mingw64\\bin\\gcc.exe -D_GNU_SOURCE=1 -Wl,--no-undefined CMakeFiles/cmTC_13171.dir/src.c.obj -o cmTC_13171.exe -Wl,--out-implib,libcmTC_13171.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/msys64/mingw64/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "C:/msys64/mingw64/share/cmake/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "vendored/SDL/CMakeLists.txt:654 (check_c_source_compiles)"
+    checks:
+      - "Performing Test COMPILER_SUPPORTS_MMX"
+    directories:
+      source: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-1a4a4g"
+      binary: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-1a4a4g"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/vendored/SDL/cmake"
+    buildResult:
+      variable: "COMPILER_SUPPORTS_MMX"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-1a4a4g'
+        
+        Run Build Command(s): C:/msys64/mingw64/bin/ninja.exe -v cmTC_4117a
+        [1/2] C:\\msys64\\mingw64\\bin\\gcc.exe -DCOMPILER_SUPPORTS_MMX  -D_GNU_SOURCE=1 -mmmx -o CMakeFiles/cmTC_4117a.dir/src.c.obj -c "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-1a4a4g/src.c"
+        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\msys64\\mingw64\\bin\\gcc.exe -D_GNU_SOURCE=1 -mmmx  CMakeFiles/cmTC_4117a.dir/src.c.obj -o cmTC_4117a.exe -Wl,--out-implib,libcmTC_4117a.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
+        
+      exitCode: 0
