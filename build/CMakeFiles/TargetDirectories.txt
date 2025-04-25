@@ -1,0 +1,8 @@
+C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/Data-Sorting-Speeds.dir
+C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/edit_cache.dir
+C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/rebuild_cache.dir
+C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/vendored/SDL/CMakeFiles/SDL3-shared.dir
+C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/vendored/SDL/CMakeFiles/SDL3_test.dir
+C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/vendored/SDL/CMakeFiles/SDL_uclibc.dir
+C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/vendored/SDL/CMakeFiles/edit_cache.dir
+C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/vendored/SDL/CMakeFiles/rebuild_cache.dir
