@@ -1,5 +1,10 @@
 #include "SDL3/SDL.h"
 
+#include "dataHandler.hpp"
+#include "generateDataGraph.hpp"
+
+#include <iostream>
+
 static SDL_Window* window;
 static SDL_Renderer* renderer;
 
