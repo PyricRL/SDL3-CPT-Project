@@ -16,3 +16,5 @@ add_executable(Data-Sorting-Speeds WIN32 ${SOURCE})
 
 # Link to the actual SDL3 library.
 target_link_libraries(Data-Sorting-Speeds PRIVATE SDL3::SDL3)
+
+target_link_options(Data-Sorting-Speeds PRIVATE "-mconsole")
