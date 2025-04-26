@@ -81,6 +81,10 @@ int generateData(int length, std::string Type) {
 int displayDataToScreen(SDL_Renderer* renderer, SDL_Window* window) {
     /**
      * Here needs to parse the data and then display it
+     * Maybe we have an input box somewhere on the screen which takes input and calls
+     * GenerateData() with the arguments
+     * I have something written in c but that doesn't transfer over...
+     * imma let you deal with this lol
      */
     ArrayConfigs data = parseCSV("data/programIn.csv");
     
