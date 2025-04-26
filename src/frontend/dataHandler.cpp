@@ -78,9 +78,14 @@ int generateData(int length, std::string Type) {
     return 0;
 }
 
-int displayDataToScreen(std::vector<int> array, int length, SDL_Renderer* renderer, SDL_Window* window) {
-    for (int i = 0; i < length - 1; i++) {
-        std::cout << array[i] << std::endl;
+int displayDataToScreen(SDL_Renderer* renderer, SDL_Window* window) {
+    /**
+     * Here needs to parse the data and then display it
+     */
+    ArrayConfigs data = parseCSV("data/programIn.csv");
+    
+    for (int i = 0; i < data.size - 1; i++) {
+        std::cout << data.array[i] << std::endl;
     }
     return 0;
 }

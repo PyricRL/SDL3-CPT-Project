@@ -14,4 +14,4 @@
 
 int generateData(int length, std::string Type);
 
-int displayDataToScreen(std::vector<int> array, int length, SDL_Renderer* renderer, SDL_Window* window);
+int displayDataToScreen(SDL_Renderer* renderer, SDL_Window* window);

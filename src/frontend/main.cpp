@@ -62,7 +62,7 @@ int main(int argc, char* argv[]) {
 
 	std::vector<int> array(10);
 
-	if (displayDataToScreen(array, 10, renderer, window)) {
+	if (displayDataToScreen(renderer, window)) {
 		std::cout << "DisplayDataToScreen failed with error" << std::endl;
 		return 1;
 	}
