@@ -30,7 +30,7 @@ static SDL_Renderer* renderer;
  */
 
  /**
-  * if it says that your trying to push a file:
+  * Fix to bug showing commit to the vendored/SDL folder:
   * git submodule deinit -f vendored/SDL
   * git rm -rf --cached vendored/SDL
   * rm -rf .git/modules/vendored/SDL
@@ -43,6 +43,7 @@ void update(SDL_Renderer* renderer) {
 }
 
 int main(int argc, char* argv[]) {
+	std::cout << "Hello World!" << std::endl;
 	if (!SDL_Init(SDL_INIT_VIDEO)) {
 		SDL_Log("SDL_Init Error: %s", SDL_GetError());
 		return 1;
