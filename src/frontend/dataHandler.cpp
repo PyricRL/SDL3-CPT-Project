@@ -112,7 +112,7 @@ int displayDataToScreen(SDL_Renderer* renderer, SDL_Window* window) {
      * as well as 2 different surfaces which contain the sorts
      */
 
-    SDL_Surface* cppSortSurface = SDL_CreateSurface()
+    SDL_Surface* cppSortSurface = SDL_CreateSurface(200, 400, SDL_PIXELFORMAT_UNKNOWN);
     
     for (int i = 0; i < data.size - 1; i++) {
         SDL_FRect rect;

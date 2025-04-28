@@ -43,13 +43,12 @@ void update(SDL_Renderer* renderer) {
 }
 
 int main(int argc, char* argv[]) {
-	std::cout << "Hello World!" << std::endl;
 	if (!SDL_Init(SDL_INIT_VIDEO)) {
 		SDL_Log("SDL_Init Error: %s", SDL_GetError());
 		return 1;
 	}
 
-	if (!SDL_CreateWindowAndRenderer("Hello SDL!", 800, 600, 0, &window, &renderer)) {
+	if (!SDL_CreateWindowAndRenderer("Hello SDL!", 800, 600, SDL_WINDOW_MAXIMIZED, &window, &renderer)) {
 		SDL_Log("SDL_CreateWindowAndRenderer Error: %s", SDL_GetError());
 		return 1;
 	}
