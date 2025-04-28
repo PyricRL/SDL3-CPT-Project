@@ -35,7 +35,7 @@ static TTF_Font* font;
   * Fix to bug showing commit to the vendored/SDL folder:
   * git submodule deinit -f vendored/SDL
   * git rm -rf --cached vendored/SDL
-  * rm -rf .git/modules/vendored/SDL
+  * git rm -rf .git/modules/vendored/SDL
   */
 
 int renderText(SDL_Renderer* renderer, float fontSize, std::string text, int x, int y) {
