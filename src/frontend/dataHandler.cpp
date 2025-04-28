@@ -39,7 +39,7 @@ int generateData(int length, std::string Type) {
     temp.push_back(dataStr);
 
     // open file to write to
-    std::ofstream outputFile("data/programIn.csv");
+    std::ofstream outputFile("../../data/programIn.csv");
 
     if (!outputFile.is_open())
     {
@@ -57,7 +57,6 @@ int generateData(int length, std::string Type) {
     } else {
         std::cerr << "Error: temp[0] does not have at least two elements." << std::endl;
     }
-
 
     // write the temp vector to the file
     for (const auto& row : temp)
@@ -86,7 +85,7 @@ int displayDataToScreen(SDL_Renderer* renderer, SDL_Window* window) {
      * I have something written in c but that doesn't transfer over...
      * imma let you deal with this lol
      */
-    ArrayConfigs data = parseCSV("data/programIn.csv");
+    ArrayConfigs data = parseCSV("../../data/programIn.csv");
     
     for (int i = 0; i < data.size - 1; i++) {
         std::cout << data.array[i] << std::endl;
