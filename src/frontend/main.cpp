@@ -72,13 +72,6 @@ int renderText(SDL_Renderer* renderer, float fontSize, std::string text, int x, 
 	return 0;
 }
 
-void update(SDL_Renderer* renderer) {
-	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-    SDL_RenderClear(renderer);
-    renderText(renderer, 100, "Hi", 10, 10);
-    SDL_RenderPresent(renderer);
-}
-
 int main(int argc, char* argv[]) {
 	if (!TTF_Init()) {
 		std::cout << "TTF_Init Error: " << SDL_GetError() << std::endl;
@@ -119,6 +112,9 @@ int main(int argc, char* argv[]) {
 			}
 		}
 
-        update(renderer);
+        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+		SDL_RenderClear(renderer);
+		renderText(renderer, 50, "Hello, World!", 100, 100);
+		SDL_RenderPresent(renderer);
     }
 }
