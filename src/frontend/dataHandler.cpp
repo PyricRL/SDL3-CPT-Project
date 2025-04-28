@@ -5,7 +5,6 @@
 static std::vector<std::vector<std::string>> temp;
 
 int generateData(int length, std::string Type) {
-    std::cout << "Hi" << std::endl;
     std::vector<std::string> headerStr; // Vector of headers
     std::vector<std::string> dataStr;   // Vector of data
     std::vector<int> indices(length);   // Vector to hold indices 0 to length-1
@@ -75,7 +74,6 @@ int generateData(int length, std::string Type) {
     }
 
     outputFile.close();
-    std::cout << "Closed file just fine... get better" << std::endl;
     return 0;
 }
 
@@ -108,10 +106,10 @@ int displayDataToScreen(SDL_Renderer* renderer, SDL_Window* window) {
     int scaleFactor = *max_it;
     
     /**
-     * from here, plan is to get bounds of full window and allow for buttons on the bottom, 
-     * as well as 2 different surfaces which contain the sorts
-     */
-
+    * from here, plan is to get bounds of full window and allow for buttons on the bottom, 
+    * as well as 2 different surfaces which contain the sorts
+    */
+    
     SDL_Surface* cppSortSurface = SDL_CreateSurface(200, 400, SDL_PIXELFORMAT_UNKNOWN);
     
     for (int i = 0; i < data.size - 1; i++) {
