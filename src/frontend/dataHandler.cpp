@@ -1,5 +1,7 @@
 #include "dataHandler.hpp"
 
+#include "../backend/cpp/run.hpp"
+
 static std::vector<std::vector<std::string>> temp;
 
 int generateData(int length, std::string Type) {
@@ -91,6 +93,13 @@ int displayDataToScreen(SDL_Renderer* renderer, SDL_Window* window) {
         std::cout << "Python script executed successfully." << std::endl;
     } else {
         std::cerr << "Error executing Python script." << std::endl;
+    }
+
+    int cppResult = runBack();
+    if (cppResult == 0) {
+        std::cout << "C++ script executed successfully." << std::endl;
+    } else {
+        std::cerr << "Error executing C++ script." << std::endl;
     }
 
     ArrayConfigs data = parseCSV("../../data/programIn.csv");
