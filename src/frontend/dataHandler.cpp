@@ -3,6 +3,7 @@
 static std::vector<std::vector<std::string>> temp;
 
 int generateData(int length, std::string Type) {
+    std::cout << "Hi" << std::endl;
     std::vector<std::string> headerStr; // Vector of headers
     std::vector<std::string> dataStr;   // Vector of data
     std::vector<int> indices(length);   // Vector to hold indices 0 to length-1
@@ -38,12 +39,12 @@ int generateData(int length, std::string Type) {
     temp.push_back(dataStr);
 
     // open file to write to
-    std::ofstream outputFile("Data/inputData.csv");
+    std::ofstream outputFile("data/programIn.csv");
 
     if (!outputFile.is_open())
     {
         std::cerr << "Error: Could not open file for writing." << std::endl;
-        return 1; // Indicate an error
+        return 1;
     }
 
     // Check for first index of array (length)
@@ -73,5 +74,22 @@ int generateData(int length, std::string Type) {
     }
 
     outputFile.close();
+    std::cout << "Closed file just fine... get better" << std::endl;
+    return 0;
+}
+
+int displayDataToScreen(SDL_Renderer* renderer, SDL_Window* window) {
+    /**
+     * Here needs to parse the data and then display it
+     * Maybe we have an input box somewhere on the screen which takes input and calls
+     * GenerateData() with the arguments
+     * I have something written in c but that doesn't transfer over...
+     * imma let you deal with this lol
+     */
+    ArrayConfigs data = parseCSV("data/programIn.csv");
+    
+    for (int i = 0; i < data.size - 1; i++) {
+        std::cout << data.array[i] << std::endl;
+    }
     return 0;
 }

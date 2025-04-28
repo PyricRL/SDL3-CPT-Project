@@ -1,7 +1,6 @@
 #include "SDL3/SDL.h"
 
 #include "dataHandler.hpp"
-#include "generateDataGraph.hpp"
 
 #include <iostream>
 
@@ -31,7 +30,7 @@ static SDL_Renderer* renderer;
  */
 
  /**
-  * if it says that your trying to push a file:
+  * Fix to bug showing commit to the vendored/SDL folder:
   * git submodule deinit -f vendored/SDL
   * git rm -rf --cached vendored/SDL
   * rm -rf .git/modules/vendored/SDL
@@ -44,6 +43,7 @@ void update(SDL_Renderer* renderer) {
 }
 
 int main(int argc, char* argv[]) {
+	std::cout << "Hello World!" << std::endl;
 	if (!SDL_Init(SDL_INIT_VIDEO)) {
 		SDL_Log("SDL_Init Error: %s", SDL_GetError());
 		return 1;
@@ -51,6 +51,19 @@ int main(int argc, char* argv[]) {
 
 	if (!SDL_CreateWindowAndRenderer("Hello SDL!", 800, 600, 0, &window, &renderer)) {
 		SDL_Log("SDL_CreateWindowAndRenderer Error: %s", SDL_GetError());
+		return 1;
+	}
+
+	if (generateData(10, "Merge"))
+	{
+		std::cout << "GenerateData failed with error" << std::endl;
+		return 1;
+	}
+
+	std::vector<int> array(10);
+
+	if (displayDataToScreen(renderer, window)) {
+		std::cout << "DisplayDataToScreen failed with error" << std::endl;
 		return 1;
 	}
 
