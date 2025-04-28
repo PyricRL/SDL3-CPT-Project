@@ -6,8 +6,8 @@ import bubbleSort
 import mergeSort
 import insertionSort
 
-globalVariables.inputFile = f"../../../data/{sys.argv[1]}"
-globalVariables.outputFile = f"../../../data/{sys.argv[2]}"
+globalVariables.inputFile = f"{sys.argv[1]}"
+globalVariables.outputFile = f"{sys.argv[2]}"
 
 tempArray = []
 

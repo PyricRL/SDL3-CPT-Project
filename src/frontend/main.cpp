@@ -54,7 +54,7 @@ int main(int argc, char* argv[]) {
 		return 1;
 	}
 
-	if (generateData(10, "Merge"))
+	if (generateData(10, "merge"))
 	{
 		std::cout << "GenerateData failed with error" << std::endl;
 		return 1;

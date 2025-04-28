@@ -85,6 +85,14 @@ int displayDataToScreen(SDL_Renderer* renderer, SDL_Window* window) {
      * I have something written in c but that doesn't transfer over...
      * imma let you deal with this lol
      */
+
+    int pythonResult = system("python ../../src/backend/python/parseData.py ../../data/programIn.csv ../../data/pythonOut.csv");
+    if (pythonResult == 0) {
+        std::cout << "Python script executed successfully." << std::endl;
+    } else {
+        std::cerr << "Error executing Python script." << std::endl;
+    }
+
     ArrayConfigs data = parseCSV("../../data/programIn.csv");
     
     for (int i = 0; i < data.size - 1; i++) {
