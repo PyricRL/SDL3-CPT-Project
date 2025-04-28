@@ -38,15 +38,44 @@ static TTF_Font* font;
   * rm -rf .git/modules/vendored/SDL
   */
 
-int renderText(SDL_Renderer* renderer, int fontSize, std::string words) {
-	SDL_Color color = { 255, 255, 255, SDL_ALPHA_OPAQUE };
-	SDL_Surface* text = TTF_RenderText_Blended(font, "Hello World!", 0, color);
-	font = TTF_OpenFontIO(SDL_IOFromConstMem(tiny_ttf, tiny_ttf_len), true, 18.0f);
+int renderText(SDL_Renderer* renderer, float fontSize, std::string text, int x, int y) {
+	font = TTF_OpenFont("../../Roboto-VariableFont_wdth,wght.ttf", fontSize);
+	if (!font) {
+		SDL_Log("Font Initialize Error: %s", SDL_GetError());
+		return 1;
+	}
+
+	SDL_Color color = { 255, 255, 255, 255 };
+
+	SDL_Surface* surface = TTF_RenderText_Solid(font, text.c_str(), text.length(), color);
+	
+	if (!surface) {
+		SDL_Log("TTF_RenderText_Solid Error: %s", SDL_GetError());
+		return 1;
+	}
+
+	SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
+	if (!texture) {
+		SDL_Log("SDL_CreateTextureFromSurface Error: %s", SDL_GetError());
+		return 1;
+	}
+
+	SDL_FRect dst;
+
+	dst = { (float)x, (float)y, (float)surface->w, (float)surface->h };
+
+	SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+	SDL_RenderTexture(renderer, texture, nullptr, &dst);
+
+	SDL_DestroyTexture(texture);
+	SDL_DestroySurface(surface);
+	return 0;
 }
 
 void update(SDL_Renderer* renderer) {
-    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-	SDL_RenderClear(renderer);
+	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+    SDL_RenderClear(renderer);
+    renderText(renderer, 100, "Hi", 10, 10);
     SDL_RenderPresent(renderer);
 }
 
