@@ -11695,3 +11695,37 @@ events:
       Running the CXX compiler's linker: "C:/msys64/mingw64/x86_64-w64-mingw32/bin/ld.exe" "-v"
       GNU ld (GNU Binutils) 2.44
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/msys64/mingw64/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "C:/msys64/mingw64/share/cmake/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "vendored/SDL_ttf/cmake/PrivateSdlFunctions.cmake:239 (check_c_source_compiles)"
+      - "vendored/SDL_ttf/cmake/PrivateSdlFunctions.cmake:280 (sdl_check_linker_flag)"
+      - "vendored/SDL_ttf/CMakeLists.txt:220 (sdl_target_link_options_no_undefined)"
+    checks:
+      - "Performing Test HAVE_WL_NO_UNDEFINED"
+    directories:
+      source: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-3ds72i"
+      binary: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-3ds72i"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/vendored/SDL_ttf/cmake"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_WL_NO_UNDEFINED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-3ds72i'
+        
+        Run Build Command(s): C:/msys64/mingw64/bin/ninja.exe -v cmTC_20528
+        [1/2] C:\\msys64\\mingw64\\bin\\gcc.exe -DHAVE_WL_NO_UNDEFINED   -o CMakeFiles/cmTC_20528.dir/src.c.obj -c "C:/Users/LJCosa/OneDrive - Edwardsville Community Schools/Coding/GitHub Repos/SDL3Cmake/build/CMakeFiles/CMakeScratch/TryCompile-3ds72i/src.c"
+        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\msys64\\mingw64\\bin\\gcc.exe  -Wl,--no-undefined CMakeFiles/cmTC_20528.dir/src.c.obj -o cmTC_20528.exe -Wl,--out-implib,libcmTC_20528.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
+        
+      exitCode: 0
+...

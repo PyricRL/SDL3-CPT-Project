@@ -103,9 +103,25 @@ int displayDataToScreen(SDL_Renderer* renderer, SDL_Window* window) {
     }
 
     ArrayConfigs data = parseCSV("../../data/programIn.csv");
+
+    auto max_it = std::max_element(data.array.begin(), data.array.end());
+    int scaleFactor = *max_it;
+    
+    /**
+     * from here, plan is to get bounds of full window and allow for buttons on the bottom, 
+     * as well as 2 different surfaces which contain the sorts
+     */
+
+    SDL_Surface* cppSortSurface = SDL_CreateSurface()
     
     for (int i = 0; i < data.size - 1; i++) {
-        std::cout << data.array[i] << std::endl;
+        SDL_FRect rect;
+        rect.x = i + 5;
+        rect.y = 0;
+        rect.w = i + 5;
+        rect.h = 
+        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+	    SDL_RenderFillRect(renderer, &rect);
     }
     return 0;
 }
