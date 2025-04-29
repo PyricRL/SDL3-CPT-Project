@@ -77,6 +77,25 @@ int generateData(int length, std::string Type) {
     return 0;
 }
 
+int pullDataFromFunctions() {
+    int pythonResult = system("python ../../src/backend/python/parseData.py ../../data/programIn.csv ../../data/pythonOut.csv");
+    if (pythonResult == 0) {
+        std::cout << "Python script executed successfully." << std::endl;
+    } else {
+        std::cerr << "Error executing Python script." << std::endl;
+        return 1;
+    }
+
+    int cppResult = runBack();
+    if (cppResult == 0) {
+        std::cout << "C++ script executed successfully." << std::endl;
+    } else {
+        std::cerr << "Error executing C++ script." << std::endl;
+        return 1;
+    }
+    return 0;
+}
+
 int displayDataToScreen(SDL_Renderer* renderer, SDL_Window* window) {
     /**
      * Here needs to parse the data and then display it
@@ -85,20 +104,6 @@ int displayDataToScreen(SDL_Renderer* renderer, SDL_Window* window) {
      * I have something written in c but that doesn't transfer over...
      * imma let you deal with this lol
      */
-
-    int pythonResult = system("python ../../src/backend/python/parseData.py ../../data/programIn.csv ../../data/pythonOut.csv");
-    if (pythonResult == 0) {
-        std::cout << "Python script executed successfully." << std::endl;
-    } else {
-        std::cerr << "Error executing Python script." << std::endl;
-    }
-
-    int cppResult = runBack();
-    if (cppResult == 0) {
-        std::cout << "C++ script executed successfully." << std::endl;
-    } else {
-        std::cerr << "Error executing C++ script." << std::endl;
-    }
 
     ArrayConfigs data = parseCSV("../../data/programIn.csv");
 
@@ -116,21 +121,23 @@ int displayDataToScreen(SDL_Renderer* renderer, SDL_Window* window) {
 
     const SDL_PixelFormatDetails* details = SDL_GetPixelFormatDetails(screenSurface->format);
     Uint32 red = SDL_MapRGBA(details, NULL, 255, 0, 0, 255);
-    SDL_Color red_color = { 255, 0, 0, 255 };
-    Uint32 red = SDL_ConvertColor(format, &red_color);
 
-    SDL_Rect rect = {500, 500, 10, 10};
+    SDL_Rect rect = {10, 10, 100, 100};
     SDL_FillSurfaceRect(cppSortSurface, &rect, red);
 
-    SDL_Rect destRed = { 500, 500, 0, 0 }; // Position to blit the red surface
-    if (!SDL_BlitSurface(cppSortSurface, NULL, screenSurface, &destRed)) {
-        SDL_Log("SDL_BlitSurface Error: %s", SDL_GetError());
-    }
-    SDL_UpdateWindowSurface(window);
+    SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, cppSortSurface);
+	if (!texture) {
+		SDL_Log("SDL_CreateTextureFromSurface Error: %s", SDL_GetError());
+		return 1;
+	}
 
-    SDL_DestroySurface(screenSurface);
-    SDL_DestroySurface(cppSortSurface);
-    SDL_DestroySurface(pythonSortSurface);
+    SDL_FRect dst = {(float)10, (float)10, (float)cppSortSurface->w, (float)cppSortSurface->h};
+
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+	SDL_RenderTexture(renderer, texture, nullptr, &dst);
+
+	SDL_DestroyTexture(texture);
+	SDL_DestroySurface(cppSortSurface);
 
     return 0;
 }

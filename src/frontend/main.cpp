@@ -93,13 +93,13 @@ int main(int argc, char* argv[]) {
 		std::cout << "GenerateData failed with error" << std::endl;
 		return 1;
 	}
-
-	std::vector<int> array(10);
-
-	if (displayDataToScreen(renderer, window)) {
+	
+	if (pullDataFromFunctions()) {
 		std::cout << "DisplayDataToScreen failed with error" << std::endl;
 		return 1;
 	}
+
+	std::vector<int> array(10);
 
     bool running = true;
 
@@ -112,9 +112,10 @@ int main(int argc, char* argv[]) {
 			}
 		}
 
-        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+		SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 		SDL_RenderClear(renderer);
 		renderText(renderer, 50, "Hello, World!", 100, 100);
+		displayDataToScreen(renderer, window);
 		SDL_RenderPresent(renderer);
     }
 }
