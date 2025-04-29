@@ -88,7 +88,7 @@ int main(int argc, char* argv[]) {
 		return 1;
 	}
 
-	if (generateData(10, "merge"))
+	if (generateData(10, "bubble"))
 	{
 		std::cout << "GenerateData failed with error" << std::endl;
 		return 1;

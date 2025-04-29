@@ -117,7 +117,7 @@ int displayDataToScreen(SDL_Renderer* renderer, SDL_Window* window) {
         rect.x = i + 5;
         rect.y = 0;
         rect.w = i + 5;
-        rect.h = 
+        rect.h = i;
         SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
 	    SDL_RenderFillRect(renderer, &rect);
     }
