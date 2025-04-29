@@ -106,20 +106,31 @@ int displayDataToScreen(SDL_Renderer* renderer, SDL_Window* window) {
     int scaleFactor = *max_it;
     
     /**
-    * from here, plan is to get bounds of full window and allow for buttons on the bottom, 
-    * as well as 2 different surfaces which contain the sorts
-    */
-    
-    SDL_Surface* cppSortSurface = SDL_CreateSurface(200, 400, SDL_PIXELFORMAT_UNKNOWN);
-    
-    for (int i = 0; i < data.size - 1; i++) {
-        SDL_FRect rect;
-        rect.x = i + 5;
-        rect.y = 0;
-        rect.w = i + 5;
-        rect.h = i;
-        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-	    SDL_RenderFillRect(renderer, &rect);
+     * from here, plan is to get bounds of full window and allow for buttons on the bottom, 
+     * as well as 2 different surfaces which contain the sorts
+     */
+
+    SDL_Surface* screenSurface = SDL_GetWindowSurface(window);
+    SDL_Surface* cppSortSurface = SDL_CreateSurface(200, 100, screenSurface->format);
+    SDL_Surface* pythonSortSurface = SDL_CreateSurface(200, 100, screenSurface->format);
+
+    const SDL_PixelFormatDetails* details = SDL_GetPixelFormatDetails(screenSurface->format);
+    Uint32 red = SDL_MapRGBA(details, NULL, 255, 0, 0, 255);
+    SDL_Color red_color = { 255, 0, 0, 255 };
+    Uint32 red = SDL_ConvertColor(format, &red_color);
+
+    SDL_Rect rect = {500, 500, 10, 10};
+    SDL_FillSurfaceRect(cppSortSurface, &rect, red);
+
+    SDL_Rect destRed = { 500, 500, 0, 0 }; // Position to blit the red surface
+    if (!SDL_BlitSurface(cppSortSurface, NULL, screenSurface, &destRed)) {
+        SDL_Log("SDL_BlitSurface Error: %s", SDL_GetError());
     }
+    SDL_UpdateWindowSurface(window);
+
+    SDL_DestroySurface(screenSurface);
+    SDL_DestroySurface(cppSortSurface);
+    SDL_DestroySurface(pythonSortSurface);
+
     return 0;
 }
