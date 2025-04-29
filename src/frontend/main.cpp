@@ -112,10 +112,12 @@ int main(int argc, char* argv[]) {
 			}
 		}
 
+		SDL_Color color = {255, 255, 255, 255};
+
 		SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 		SDL_RenderClear(renderer);
 		renderText(renderer, 50, "Hello, World!", 100, 100);
-		displayDataToScreen(renderer, window);
+		displayDataToScreen(renderer, window, 0, 0, 9999, 9999, color);
 		SDL_RenderPresent(renderer);
     }
 }

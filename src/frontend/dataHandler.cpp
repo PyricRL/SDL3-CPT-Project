@@ -96,7 +96,7 @@ int pullDataFromFunctions() {
     return 0;
 }
 
-int displayDataToScreen(SDL_Renderer* renderer, SDL_Window* window) {
+int displayDataToScreen(SDL_Renderer* renderer, SDL_Window* window, int x, int y, int w, int h, SDL_Color color) {
     /**
      * Here needs to parse the data and then display it
      * Maybe we have an input box somewhere on the screen which takes input and calls
@@ -116,28 +116,43 @@ int displayDataToScreen(SDL_Renderer* renderer, SDL_Window* window) {
      */
 
     SDL_Surface* screenSurface = SDL_GetWindowSurface(window);
-    SDL_Surface* cppSortSurface = SDL_CreateSurface(200, 100, screenSurface->format);
-    SDL_Surface* pythonSortSurface = SDL_CreateSurface(200, 100, screenSurface->format);
+    
+    int marginX = 25;
+    int marginY = 250;
+    int width = screenSurface->w;
+    int height = screenSurface->h;
+
+    // FIXME !!! - Doesn't work for some reason, the cpp surface starts at the top and ends like 25 px off,
+    // The python surface starts low and goes for abt 25 pixels off also
+    SDL_Surface* cppSortSurface = SDL_CreateSurface((width / 2) - (marginX * 2), (height / 2) - (marginY * 2), screenSurface->format);
+    SDL_Surface* pythonSortSurface = SDL_CreateSurface((width / 2) - (marginX * 2), (height / 2) - (marginY * 2), screenSurface->format);
 
     const SDL_PixelFormatDetails* details = SDL_GetPixelFormatDetails(screenSurface->format);
     Uint32 red = SDL_MapRGBA(details, NULL, 255, 0, 0, 255);
 
-    SDL_Rect rect = {10, 10, 100, 100};
+    SDL_Rect rect = {x, y, w, h};
     SDL_FillSurfaceRect(cppSortSurface, &rect, red);
+    SDL_FillSurfaceRect(pythonSortSurface, &rect, red);
 
-    SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, cppSortSurface);
-	if (!texture) {
+    SDL_Texture* cppTexture = SDL_CreateTextureFromSurface(renderer, cppSortSurface);
+    SDL_Texture* pythonTexture = SDL_CreateTextureFromSurface(renderer, pythonSortSurface);
+	if (!cppTexture || !pythonTexture) {
 		SDL_Log("SDL_CreateTextureFromSurface Error: %s", SDL_GetError());
 		return 1;
 	}
 
-    SDL_FRect dst = {(float)10, (float)10, (float)cppSortSurface->w, (float)cppSortSurface->h};
+    // Handle organizing of the location of the rects
+    SDL_FRect cppDst = {(float)marginX, (float)marginY, (float)cppSortSurface->w, (float)cppSortSurface->h};
+    SDL_FRect pythonDst = {(float)marginX + (width / 2), (float)marginY, (float)pythonSortSurface->w, (float)pythonSortSurface->h};
 
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-	SDL_RenderTexture(renderer, texture, nullptr, &dst);
+	SDL_RenderTexture(renderer, cppTexture, nullptr, &cppDst);
+    SDL_RenderTexture(renderer, pythonTexture, nullptr, &pythonDst);
 
-	SDL_DestroyTexture(texture);
+	SDL_DestroyTexture(cppTexture);
 	SDL_DestroySurface(cppSortSurface);
+
+    SDL_DestroyTexture(pythonTexture);
+	SDL_DestroySurface(pythonSortSurface);
 
     return 0;
 }
