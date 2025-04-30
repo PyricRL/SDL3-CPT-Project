@@ -96,7 +96,7 @@ int pullDataFromFunctions() {
     return 0;
 }
 
-int displayDataToScreen(SDL_Renderer* renderer, SDL_Window* window, SDL_Surface* screenSurface, int x, int y, int w, int h, SDL_Color color) {
+int displayDataToScreen(SDL_Renderer* renderer, SDL_Window* window, SDL_Surface* screenSurface, int x, int y, int w, int h, int bordorWidth) {
     /**
      * Here needs to parse the data and then display it
      * Maybe we have an input box somewhere on the screen which takes input and calls
@@ -128,7 +128,7 @@ int displayDataToScreen(SDL_Renderer* renderer, SDL_Window* window, SDL_Surface*
     const SDL_PixelFormatDetails* details = SDL_GetPixelFormatDetails(screenSurface->format);
     Uint32 red = SDL_MapRGBA(details, NULL, 255, 0, 0, 255);
 
-    SDL_Rect rect = {x, y, w, h};
+    SDL_Rect rect = { x, y, w, h };
     SDL_FillSurfaceRect(cppSortSurface, &rect, red);
     SDL_FillSurfaceRect(pythonSortSurface, &rect, red);
 
@@ -140,8 +140,11 @@ int displayDataToScreen(SDL_Renderer* renderer, SDL_Window* window, SDL_Surface*
 	}
 
     // Handle organizing of the location of the rects
-    SDL_FRect cppDst = {(float)marginX, (float)marginY, (float)cppSortSurface->w, (float)cppSortSurface->h};
-    SDL_FRect pythonDst = {(float)marginX + (width / 2), (float)marginY, (float)pythonSortSurface->w, (float)pythonSortSurface->h};
+    SDL_FRect cppDst = { (float)marginX, (float)marginY, (float)cppSortSurface->w, (float)cppSortSurface->h };
+    SDL_FRect pythonDst = { (float)marginX + (width / 2), (float)marginY, (float)pythonSortSurface->w, (float)pythonSortSurface->h };
+
+    SDL_FRect cppBorderRect = { (float)(marginX - bordorWidth), (float)(marginY - bordorWidth), (float)((width / 2) - (marginX * 2) + bordorWidth),  (float)(height - (marginY * 2)  + bordorWidth)};
+    SDL_FRect pythonBorderRect = { (float)(marginX + (width / 2) - bordorWidth), (float)(marginY - bordorWidth), (float)((width / 2) - (marginX * 2) + bordorWidth),  (float)(height - (marginY * 2)  + bordorWidth)};
 
 	SDL_RenderTexture(renderer, cppTexture, nullptr, &cppDst);
     SDL_RenderTexture(renderer, pythonTexture, nullptr, &pythonDst);
