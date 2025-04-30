@@ -96,7 +96,7 @@ int pullDataFromFunctions() {
     return 0;
 }
 
-int displayDataToScreen(SDL_Renderer* renderer, SDL_Window* window, int x, int y, int w, int h, SDL_Color color) {
+int displayDataToScreen(SDL_Renderer* renderer, SDL_Window* window, SDL_Surface* screenSurface, int x, int y, int w, int h, SDL_Color color) {
     /**
      * Here needs to parse the data and then display it
      * Maybe we have an input box somewhere on the screen which takes input and calls
@@ -114,18 +114,14 @@ int displayDataToScreen(SDL_Renderer* renderer, SDL_Window* window, int x, int y
      * from here, plan is to get bounds of full window and allow for buttons on the bottom, 
      * as well as 2 different surfaces which contain the sorts
      */
-
-    SDL_Surface* screenSurface = SDL_GetWindowSurface(window);
     
     int marginX = 25;
     int marginY = 250;
     int width = screenSurface->w;
     int height = screenSurface->h;
 
-    // FIXME !!! - Doesn't work for some reason, the cpp surface starts at the top and ends like 25 px off,
-    // The python surface starts low and goes for abt 25 pixels off also
-    SDL_Surface* cppSortSurface = SDL_CreateSurface((width / 2) - (marginX * 2), (height / 2) - (marginY * 2), screenSurface->format);
-    SDL_Surface* pythonSortSurface = SDL_CreateSurface((width / 2) - (marginX * 2), (height / 2) - (marginY * 2), screenSurface->format);
+    SDL_Surface* cppSortSurface = SDL_CreateSurface((width / 2) - (marginX * 2), height - (marginY * 2), screenSurface->format);
+    SDL_Surface* pythonSortSurface = SDL_CreateSurface((width / 2) - (marginX * 2), height - (marginY * 2), screenSurface->format);
 
     const SDL_PixelFormatDetails* details = SDL_GetPixelFormatDetails(screenSurface->format);
     Uint32 red = SDL_MapRGBA(details, NULL, 255, 0, 0, 255);
