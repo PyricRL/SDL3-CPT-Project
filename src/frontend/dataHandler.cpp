@@ -120,6 +120,8 @@ int displayDataToScreen(SDL_Renderer* renderer, SDL_Window* window, SDL_Surface*
     int width = screenSurface->w;
     int height = screenSurface->h;
 
+    // !!! FIXME !!! - Not sure why but need to multiply marginY * 2 for height... i could be wrong
+    // but i dont think thats correct
     SDL_Surface* cppSortSurface = SDL_CreateSurface((width / 2) - (marginX * 2), height - (marginY * 2), screenSurface->format);
     SDL_Surface* pythonSortSurface = SDL_CreateSurface((width / 2) - (marginX * 2), height - (marginY * 2), screenSurface->format);
 
