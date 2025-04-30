@@ -143,8 +143,12 @@ int displayDataToScreen(SDL_Renderer* renderer, SDL_Window* window, SDL_Surface*
     SDL_FRect cppDst = { (float)marginX, (float)marginY, (float)cppSortSurface->w, (float)cppSortSurface->h };
     SDL_FRect pythonDst = { (float)marginX + (width / 2), (float)marginY, (float)pythonSortSurface->w, (float)pythonSortSurface->h };
 
-    SDL_FRect cppBorderRect = { (float)(marginX - bordorWidth), (float)(marginY - bordorWidth), (float)((width / 2) - (marginX * 2) + bordorWidth),  (float)(height - (marginY * 2)  + bordorWidth)};
-    SDL_FRect pythonBorderRect = { (float)(marginX + (width / 2) - bordorWidth), (float)(marginY - bordorWidth), (float)((width / 2) - (marginX * 2) + bordorWidth),  (float)(height - (marginY * 2)  + bordorWidth)};
+    SDL_FRect cppBorderRect = { (float)(marginX - bordorWidth), (float)(marginY - bordorWidth), (float)((width / 2) - (marginX * 2) + (bordorWidth * 2)),  (float)(height - (marginY * 2)  + (bordorWidth * 2))};
+    SDL_FRect pythonBorderRect = { (float)(marginX + (width / 2) - bordorWidth), (float)(marginY - bordorWidth), (float)((width / 2) - (marginX * 2) + (bordorWidth * 2)),  (float)(height - (marginY * 2)  + (bordorWidth * 2))};
+
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &cppBorderRect);
+    SDL_RenderFillRect(renderer, &pythonBorderRect);
 
 	SDL_RenderTexture(renderer, cppTexture, nullptr, &cppDst);
     SDL_RenderTexture(renderer, pythonTexture, nullptr, &pythonDst);
