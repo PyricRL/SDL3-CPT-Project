@@ -2,6 +2,7 @@
 #include "SDL3_ttf/SDL_ttf.h"
 
 #include "dataHandler.hpp"
+#include "CSVParser.hpp"
 
 #include <iostream>
 
@@ -103,22 +104,28 @@ int main(int argc, char* argv[]) {
 		return 1;
 	}
 
-	if (generateData(10, "bubble"))
-	{
-		std::cout << "GenerateData failed with error" << std::endl;
-		return 1;
-	}
+	// if (generateData(10, "bubble"))
+	// {
+	// 	std::cout << "GenerateData failed with error" << std::endl;
+	// 	return 1;
+	// }
 	
-	if (pullDataFromFunctions()) {
-		std::cout << "PullDataFromFunctions failed with error" << std::endl;
-		return 1;
-	}
+	// if (pullDataFromFunctions()) {
+	// 	std::cout << "PullDataFromFunctions failed with error" << std::endl;
+	// 	return 1;
+	// }
 
 	std::vector<int> array(10);
 
     bool running = true;
 
 	SDL_Event event;
+
+	std::string filepath = "../../data/pythonOut.csv";
+
+	CSVParser parser(filepath, true, ',');
+
+	parser.parse();
 
 	while (running) {
 		while (SDL_PollEvent(&event)) {
