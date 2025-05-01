@@ -20,6 +20,7 @@ with open(globalVariables.inputFile, "r") as readfile:      # Open file and writ
             tempArray.append(temp)
     
         if col["Type"] == "bubble":                     # Check for sort type
+            print(tempArray)
             bubbleSort.bubbleSort(tempArray, length)
             print("bubble sort ran")
         elif col["Type"] == "merge":

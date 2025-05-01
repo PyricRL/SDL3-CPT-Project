@@ -23,14 +23,13 @@ int generateData(int length, std::string Type) {
     headerStr.push_back("Length"); // Add "Length" as a string
     dataStr.push_back(lengthStr.str());
 
-    for (int j = 0; j < length; j++) {
-        int i = indices[j]; // Get the randomized index
+    for (int i = 0; i < length; i++) { // Iterate from 0 to length - 1 directly
         std::stringstream arrayIdx;
         std::stringstream arrayInt;
         arrayIdx << "A" << i;
         arrayInt << i + 1;
-        headerStr.push_back(arrayIdx.str()); // Add the string from stringstream
-        dataStr.push_back(arrayInt.str());   // Add the int from stringstream
+        headerStr.push_back(arrayIdx.str());
+        dataStr.push_back(arrayInt.str());
     }
 
     headerStr.push_back("Type"); // Add "Type" as a string
