@@ -16,10 +16,8 @@ def bubbleSort(array, length):
                 array[j], array[j + 1] = array[j + 1], array[j]
                 globalVariables.sortTime = time.perf_counter() - startTime
                 Time = f"{globalVariables.sortTime:.14f}"
-                print(array)
                 globalVariables.addDataToOutput(array, Time, label, output)
 
     with open(globalVariables.outputFile, "w", newline='') as file:
-        print(output)
         datawriter = csv.writer(file)
         datawriter.writerows(output)        # Write rows to ouput file
