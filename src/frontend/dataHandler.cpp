@@ -27,7 +27,7 @@ int generateData(int length, std::string Type) {
         std::stringstream arrayIdx;
         std::stringstream arrayInt;
         arrayIdx << "A" << i;
-        arrayInt << i + 1;
+        arrayInt << indices[i] + 1;
         headerStr.push_back(arrayIdx.str());
         dataStr.push_back(arrayInt.str());
     }

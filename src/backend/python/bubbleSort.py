@@ -20,6 +20,6 @@ def bubbleSort(array, length):
                 globalVariables.addDataToOutput(array, Time, label, output)
 
     with open(globalVariables.outputFile, "w", newline='') as file:
-        #print(output)
+        print(output)
         datawriter = csv.writer(file)
         datawriter.writerows(output)        # Write rows to ouput file
