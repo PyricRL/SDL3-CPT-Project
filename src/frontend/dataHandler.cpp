@@ -104,10 +104,7 @@ int displayDataToScreen(SDL_Renderer* renderer, SDL_Window* window, SDL_Surface*
      * imma let you deal with this lol
      */
 
-    ArrayConfigs data = parseCSV("../../data/programIn.csv");
-
-    auto max_it = std::max_element(data.array.begin(), data.array.end());
-    int scaleFactor = *max_it;
+    // This will all need to be reworked (probably using classes) for it to be cleanly done
     
     /**
      * from here, plan is to get bounds of full window and allow for buttons on the bottom, 
