@@ -2,7 +2,7 @@
 
 #include <vector>
 
-void bubble(std::vector<int> data)
+void bubble(std::vector<int>& data)
 {
     if(data.size() > 0)
         for(int i=0;i<data.size()-1;i++)

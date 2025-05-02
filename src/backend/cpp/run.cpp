@@ -41,9 +41,7 @@ int runBack()
         return 1;
     }
 
-    // Add a default return statement here to cover cases where
-    // data.type doesn't match any of the above.
-    return 0; // Or perhaps return a specific error code like -1
+    return 0; 
 }
 
 void printArray(const std::vector<int> data)

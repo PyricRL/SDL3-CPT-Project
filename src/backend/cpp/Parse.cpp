@@ -18,6 +18,7 @@ ArrayConfigs parseCSV(std::string fileName)
     // Read from file
     while(getline(file, line))
     {
+        // Skip over the title line of the CSV file
         if(line[0] != 'L')
         {
             std::stringstream buffer;
@@ -50,7 +51,7 @@ ArrayConfigs parseCSV(std::string fileName)
                 int temp;
                 buffer >> temp;
                 data.emplace_back(temp);
-
+                
                 buffer.clear();
                 
                 counter++;
