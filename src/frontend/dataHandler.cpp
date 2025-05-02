@@ -1,9 +1,10 @@
 #include "dataHandler.hpp"
 
+#include "../backend/cpp/run.hpp"
+
 static std::vector<std::vector<std::string>> temp;
 
 int generateData(int length, std::string Type) {
-    std::cout << "Hi" << std::endl;
     std::vector<std::string> headerStr; // Vector of headers
     std::vector<std::string> dataStr;   // Vector of data
     std::vector<int> indices(length);   // Vector to hold indices 0 to length-1
@@ -22,14 +23,13 @@ int generateData(int length, std::string Type) {
     headerStr.push_back("Length"); // Add "Length" as a string
     dataStr.push_back(lengthStr.str());
 
-    for (int j = 0; j < length; j++) {
-        int i = indices[j]; // Get the randomized index
+    for (int i = 0; i < length; i++) { // Iterate from 0 to length - 1 directly
         std::stringstream arrayIdx;
         std::stringstream arrayInt;
         arrayIdx << "A" << i;
-        arrayInt << i + 1;
-        headerStr.push_back(arrayIdx.str()); // Add the string from stringstream
-        dataStr.push_back(arrayInt.str());   // Add the int from stringstream
+        arrayInt << indices[i] + 1;
+        headerStr.push_back(arrayIdx.str());
+        dataStr.push_back(arrayInt.str());
     }
 
     headerStr.push_back("Type"); // Add "Type" as a string
@@ -39,7 +39,7 @@ int generateData(int length, std::string Type) {
     temp.push_back(dataStr);
 
     // open file to write to
-    std::ofstream outputFile("data/programIn.csv");
+    std::ofstream outputFile("../../data/programIn.csv");
 
     if (!outputFile.is_open())
     {
@@ -58,7 +58,6 @@ int generateData(int length, std::string Type) {
         std::cerr << "Error: temp[0] does not have at least two elements." << std::endl;
     }
 
-
     // write the temp vector to the file
     for (const auto& row : temp)
     { // Iterate through each row in temp
@@ -74,11 +73,29 @@ int generateData(int length, std::string Type) {
     }
 
     outputFile.close();
-    std::cout << "Closed file just fine... get better" << std::endl;
     return 0;
 }
 
-int displayDataToScreen(SDL_Renderer* renderer, SDL_Window* window) {
+int pullDataFromFunctions() {
+    int pythonResult = system("python ../../src/backend/python/parseData.py ../../data/programIn.csv ../../data/pythonOut.csv");
+    if (pythonResult == 0) {
+        std::cout << "Python script executed successfully." << std::endl;
+    } else {
+        std::cerr << "Error executing Python script." << std::endl;
+        return 1;
+    }
+
+    int cppResult = runBack();
+    if (cppResult == 0) {
+        std::cout << "C++ script executed successfully." << std::endl;
+    } else {
+        std::cerr << "Error executing C++ script." << std::endl;
+        return 1;
+    }
+    return 0;
+}
+
+int displayDataToScreen(SDL_Renderer* renderer, SDL_Window* window, SDL_Surface* screenSurface, int x, int y, int w, int h, int bordorWidth) {
     /**
      * Here needs to parse the data and then display it
      * Maybe we have an input box somewhere on the screen which takes input and calls
@@ -86,10 +103,57 @@ int displayDataToScreen(SDL_Renderer* renderer, SDL_Window* window) {
      * I have something written in c but that doesn't transfer over...
      * imma let you deal with this lol
      */
-    ArrayConfigs data = parseCSV("data/programIn.csv");
+
+    // This will all need to be reworked (probably using classes) for it to be cleanly done
     
-    for (int i = 0; i < data.size - 1; i++) {
-        std::cout << data.array[i] << std::endl;
-    }
+    /**
+     * from here, plan is to get bounds of full window and allow for buttons on the bottom, 
+     * as well as 2 different surfaces which contain the sorts
+     */
+    
+    int marginX = 25;
+    int marginY = 250;
+    int width = screenSurface->w;
+    int height = screenSurface->h;
+
+    // !!! FIXME !!! - Not sure why but need to multiply marginY * 2 for height... i could be wrong
+    // but i dont think thats correct
+    SDL_Surface* cppSortSurface = SDL_CreateSurface((width / 2) - (marginX * 2), height - (marginY * 2), screenSurface->format);
+    SDL_Surface* pythonSortSurface = SDL_CreateSurface((width / 2) - (marginX * 2), height - (marginY * 2), screenSurface->format);
+
+    const SDL_PixelFormatDetails* details = SDL_GetPixelFormatDetails(screenSurface->format);
+    Uint32 red = SDL_MapRGBA(details, NULL, 255, 0, 0, 255);
+
+    SDL_Rect rect = { x, y, w, h };
+    SDL_FillSurfaceRect(cppSortSurface, &rect, red);
+    SDL_FillSurfaceRect(pythonSortSurface, &rect, red);
+
+    SDL_Texture* cppTexture = SDL_CreateTextureFromSurface(renderer, cppSortSurface);
+    SDL_Texture* pythonTexture = SDL_CreateTextureFromSurface(renderer, pythonSortSurface);
+	if (!cppTexture || !pythonTexture) {
+		SDL_Log("SDL_CreateTextureFromSurface Error: %s", SDL_GetError());
+		return 1;
+	}
+
+    // Handle organizing of the location of the rects
+    SDL_FRect cppDst = { (float)marginX, (float)marginY, (float)cppSortSurface->w, (float)cppSortSurface->h };
+    SDL_FRect pythonDst = { (float)marginX + (width / 2), (float)marginY, (float)pythonSortSurface->w, (float)pythonSortSurface->h };
+
+    SDL_FRect cppBorderRect = { (float)(marginX - bordorWidth), (float)(marginY - bordorWidth), (float)((width / 2) - (marginX * 2) + (bordorWidth * 2)),  (float)(height - (marginY * 2)  + (bordorWidth * 2))};
+    SDL_FRect pythonBorderRect = { (float)(marginX + (width / 2) - bordorWidth), (float)(marginY - bordorWidth), (float)((width / 2) - (marginX * 2) + (bordorWidth * 2)),  (float)(height - (marginY * 2)  + (bordorWidth * 2))};
+
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &cppBorderRect);
+    SDL_RenderFillRect(renderer, &pythonBorderRect);
+
+	SDL_RenderTexture(renderer, cppTexture, nullptr, &cppDst);
+    SDL_RenderTexture(renderer, pythonTexture, nullptr, &pythonDst);
+
+	SDL_DestroyTexture(cppTexture);
+	SDL_DestroySurface(cppSortSurface);
+
+    SDL_DestroyTexture(pythonTexture);
+	SDL_DestroySurface(pythonSortSurface);
+
     return 0;
 }

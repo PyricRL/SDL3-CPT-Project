@@ -14,4 +14,6 @@
 
 int generateData(int length, std::string Type);
 
-int displayDataToScreen(SDL_Renderer* renderer, SDL_Window* window);
+int pullDataFromFunctions();
+
+int displayDataToScreen(SDL_Renderer* renderer, SDL_Window* window, SDL_Surface* screenSurface, int x, int y, int w, int h, int bordorWidth);

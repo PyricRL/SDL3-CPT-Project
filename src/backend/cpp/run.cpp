@@ -14,6 +14,10 @@
 // Simple method that prints all items from an array
 void printArray(const std::vector<int> data);
 
+// Logan Added this:
+// It is used so that i can reach the run function in the main file
+#include "run.hpp"
+
 int runBack()
 {
     ArrayConfigs data = parseCSV("../../../data/programIn.csv");

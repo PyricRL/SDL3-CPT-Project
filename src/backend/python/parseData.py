@@ -6,8 +6,8 @@ import bubbleSort
 import mergeSort
 import insertionSort
 
-globalVariables.inputFile = f"../../../data/{sys.argv[1]}"
-globalVariables.outputFile = f"../../../data/{sys.argv[2]}"
+globalVariables.inputFile = f"{sys.argv[1]}"
+globalVariables.outputFile = f"{sys.argv[2]}"
 
 tempArray = []
 
@@ -21,10 +21,13 @@ with open(globalVariables.inputFile, "r") as readfile:      # Open file and writ
     
         if col["Type"] == "bubble":                     # Check for sort type
             bubbleSort.bubbleSort(tempArray, length)
+            print("bubble sort ran")
         elif col["Type"] == "merge":
             mergeSort.mergeSort(tempArray, 0, length - 1)
+            print("merge sort ran")
         elif col["Type"] == "insertion":
             insertionSort.insertionSort(tempArray, length)
+            print("insertion sort ran")
         elif col["Type"] == "quick":
             pass
         elif col["Type"] == "selection":
